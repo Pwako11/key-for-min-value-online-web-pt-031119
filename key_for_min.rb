@@ -3,6 +3,14 @@
 
 def key_for_min_value(name_hash)
   name_hash = {:blake => 500, :ashley => 2, :adam => 1}
+  if name_hash.length == 0 
+    return nil 
+  else 
+    array = []
+    name_hash.each do |key, value|
+      array << value
+    end 
+    
   name_hash.group_by{|key, value| value}.min_by{|key, value| key}.last.to_h
   min_val = key
 end
